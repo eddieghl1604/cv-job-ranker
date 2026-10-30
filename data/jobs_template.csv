@@ -1,0 +1,2 @@
+job_id,title,target_category,adjacent_categories,must_haves,nice_to_haves,description
+J01,Financial Analyst,FINANCE,ACCOUNTANT;BANKING;CONSULTANT,"Degree in finance, accounting or economics; Excel financial modelling or budgeting; 2+ years in financial analysis, FP&A or reporting","Professional qualification in progress (CFA, ACCA); SQL or Python; variance analysis","Support monthly reporting, build forecasts and budgets, analyse variances against plan, and prepare decks for management."

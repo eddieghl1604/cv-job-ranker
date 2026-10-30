@@ -218,3 +218,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Original Kaggle data, not mine to redistribute
+data/raw/
