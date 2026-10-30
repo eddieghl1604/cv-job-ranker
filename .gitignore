@@ -221,3 +221,8 @@ __marimo__/
 
 # Original Kaggle data, not mine to redistribute
 data/raw/
+
+# Files containing CV text (rebuildable from Kaggle + scripts)
+data/processed/cvs.csv
+data/processed/pairs_to_label.csv
+data/processed/relabel.csv
