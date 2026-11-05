@@ -226,3 +226,7 @@ data/raw/
 data/processed/cvs.csv
 data/processed/pairs_to_label.csv
 data/processed/relabel.csv
+data/processed/labelling.xlsx
+
+.env
+*.env
