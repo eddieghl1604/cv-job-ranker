@@ -230,3 +230,16 @@ data/processed/labelling.xlsx
 
 .env
 *.env
+
+# Telegram login: works like a key to your whole account
+*.session
+*.session-journal
+
+# Your messages and group list stay off GitHub
+data/agent.db
+data/review_*.csv
+config/sources.txt
+config/available_chats.csv
+
+config/channel_check.csv
+config/suggested_sources.txt

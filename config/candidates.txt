@@ -1,0 +1,145 @@
+# Channels to CHECK with:  python -m jobagent.check_channels
+# Lines without # get checked. Lines starting with # are skipped.
+# I pre-sorted by NAME ONLY (I can't see inside these channels); the checker
+# verifies with real numbers. To check a skipped one anyway, delete its #.
+
+# --- Check: names suggest English / global remote work ---
+@teleworksjobs
+@jobi_jobs
+@evacuatejobs
+@remotejobss
+@youritjob
+@freelancerh
+@workremotelyfreelance
+@freejobs5
+@remote_jobs_relocate
+@remoteit
+@freelancefam
+@itfreelancers
+@remotegeekjob
+@digital_ai
+@remote
+@g00djob4all
+@journal_job
+@jaabz_com
+@remoteok
+@remotejobs4u
+@hiddengurus
+@prog_itjobs
+@ratracerebellion
+@fullremoteit
+@online_jobssj
+@hrvacancies_int
+@workmonro
+@work_home_from
+@workewco
+@whynotremote
+@findjobforfree
+@remote_job_worldwide
+@freelancers_intc
+@RemoteRaja
+@remoteyeah
+@RemoteJobsTechHub
+@remote_job_it_geeklink
+@tech_revolution_group
+@hiredremoteli
+@hiringanddealing
+@customerremotejobs
+@planetwork
+@allywork
+@remotolist
+@exwort2
+@illtip
+@onlineuf
+@lifeadvance
+@zapwork
+@kcvrka
+
+# --- Check: names suggest Chinese ---
+@yuanchenggongzuozhaopin
+@yuanchenggongzuopindao
+@yuancheng_job
+@HSDY1023
+
+# --- Skipped: name suggests a language your rules drop ---
+# Russian
+# @vakansii_0
+# @rabota_onlain
+# @rueventjob
+# @rabota_illustrator
+# @polyaluzjob
+# @rabota_na_domu
+# @rabota_doma
+# @rabota_onlayny
+# @jirnie_vakansii
+# @young_relocate
+# @dubaiprofi
+# @chikago_mayamiz
+# Arabic / Persian
+# @arabonlinework
+# @onlinearabprojects
+# @dorkariland
+# Spanish / Latin America
+# @vacantesremotas            (already in your list: Vacantes Remotas)
+# @vacantesremotasempleoverse
+# @trabajos_remotos_latam
+# @ofertasteletrabajo
+# @tecnoempleo_remoto
+# @stemjobslatam
+# @remotojob
+# @gabrienremoto
+# @clubtrabajoremoto
+# @karoconecta
+# Indonesian / Uzbek / Ethiopia
+# @komunitaskerjaremoteindo
+# @siapremoteindo
+# @freelance_uzb
+# @freelance_ethio            (already in your list: Afriwork)
+
+# --- Skipped: too narrow or on-site somewhere else ---
+# @remote_job_golang          (Go developers only)
+# @remote_job_ios             (iOS developers only)
+# @sapremotejobs              (SAP consultants only)
+# @remotejobsdubai            (Dubai; often on-site or relocation)
+# @remoteworkafrica           (Africa-focused)
+# @freshernow                 (India freshers)
+
+# --- Skipped: looks like a person, shop, crypto promo, or a random name ---
+# @lenaalbinova
+# @GloriaQuesada
+# @dakotasstore
+# @hezycryptochannel
+# @cjbkqiuwptozngm0
+# @ewuqetbet
+# @freetasks                  ("tasks" channels are a common scam pattern)
+# @flexible_100k
+# @sgbva                      (already in your list: SGB Virtual Assistant, scam-risk)
+# @lsvirtualassistant
+
+# --- Added 6 Nov: Web3 / crypto job channels ---
+# The checker marks any that are already in your sources.txt as "already in your list".
+@cryptojobslist
+@web3hiring
+@jobstash
+@unicastjobs
+@remoteweb3jobs
+@stablegram
+@laborX
+@LaborXWeb3Jobs
+@DeJob_Global
+@DeJob_official
+@BossjobWeb3Jobs
+@jobs
+@Social3Jobs
+@Web3_Job
+@illuminatiJOBS
+@SmartDeerJobs
+@job_web3
+@cryptoMjob
+@cryptoDevJobs
+@cryptojobhunter
+@abetterweb3jobs
+@web3jobopps
+@web3bds
+@job_crypto_uae               # UAE: check whether roles are remote or on-site
+@degencryptojobs
