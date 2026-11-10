@@ -1,0 +1,71 @@
+# Your profile: what the AI compares every job against.
+# CHECK EVERY LINE. Lines marked TODO need your input; delete anything that isn't true.
+# This file is sent to the AI provider with every screened post, so keep it to
+# work facts only: no phone, email, address or ID numbers.
+
+summary: >
+  Final-year BSc (Hons) IT student (Financial Technology specialism) at APU Malaysia,
+  graduating Aug 2027. About 1 year of finance-industry experience: VC investment
+  analyst intern and mortgage consultant assistant. Looking for remote roles that fit
+  around studies until graduation.
+
+experience_years: 1          # total relevant work experience, in years
+
+experience:
+  - role: Investment Analyst Intern
+    org: Malaysian VC, angel network and accelerator
+    period: Apr 2026 - Oct 2026
+    did:
+      - Screened 400+ startup applications against investment criteria
+      - Wrote 10 company analyses; documented 15 founder meetings
+      - Deal sourcing and outreach to 70+ founders
+      - Reconciled audited statements with management accounts; portfolio reporting
+  - role: Mortgage Consultant Assistant (part-time)
+    org: Malaysian mortgage advisory firm
+    period: Mar 2025 - Aug 2025
+    did:
+      - Home loan applications; DSR and NDI affordability calculations
+      - Coordinated with bankers and agents
+
+projects:
+  - Final year project (in progress) - DeFi portfolio risk assessment and optimisation tool
+  - Flight data analysis machine-learning model (85% accuracy)
+  - This Telegram job-screening agent (Python, Telegram API, LLM extraction and scoring)
+  - Power Automate loan-application intake flow (in progress)   # TODO: delete if not started
+
+skills:
+  - Python
+  - SQL
+  - Excel / financial analysis
+  - Company and startup analysis, due diligence
+  - Financial statements and reconciliation
+  - LLM / AI tools for research and automation
+  # TODO: add tools you can show evidence for (e.g. Power BI, Tableau, pandas, Solidity)
+
+learning_now:                  # counts as a stretch, not a requirement met
+  - Power Platform (Power Automate)
+  - LLM application development
+  # TODO: add or remove
+
+languages: [English, Malay, Mandarin]
+
+target_roles:                  # what you want, in priority order
+  - AI / ML and automation roles (junior, intern, AI trainer/evaluator also fine)
+  - Fintech or finance analyst (financial, credit, risk, business analyst)
+  - VC / PE / investment analyst or associate (incl. internships)
+  # TODO (optional): add "Web3 / crypto analyst or BD" if you want those ranked higher
+
+not_interested:                # roles to score low even if they pass the filters
+  - Customer support / call centre
+  - Senior software engineering (backend, frontend, mobile, DevOps)
+  - Sales roles paid mainly on commission
+  # TODO: edit
+
+# ---- Hard rules: applied in code, not by the AI ----
+rules:
+  remote_only: true                         # skip on-site and hybrid roles
+  must_be_open_to_malaysia: true            # skip "Remote - USA only" etc.
+  skip_if_years_required_at_least: 2        # "2+ years" or more is skipped; "1-3 years" is kept
+  allowed_required_languages: [English, Chinese]   # roles requiring Malay or others are skipped
+  skip_for_missing_degree: false            # never skip for a degree; just noted
+  screen_post_languages: [en, zh]           # only English and Chinese posts are screened

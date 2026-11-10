@@ -76,7 +76,7 @@ PROMO_RE = re.compile(
     r"|\btalent pool\b|\bjobs newsletter\b|\bapply to jobs for you\b)",
     re.I)
 JOB_LINK_RE = re.compile(
-    r"(/(?:remote-)?jobs?/|/careers?/|/vacanc|/positions?/|/opening|/apply|"
+    r"(/(?:remote-)?jobs?/|/careers?/|jobdetail|/job\?|/vacanc|/positions?/|/opening|/apply|"
     r"greenhouse\.io|lever\.co|ashbyhq\.com|workable\.com|smartrecruiters\.com|myworkdayjobs\.com|"
     r"bamboohr\.com|recruitee\.com|teamtailor\.com|breezy\.hr|jobvite\.com|linkedin\.com/jobs|"
     r"remoteok\.com|weworkremotely\.com|wellfound\.com|indeed\.|jobstreet\.|glassdoor\.|"

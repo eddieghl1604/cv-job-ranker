@@ -1,0 +1,33 @@
+# Which AI model screens your jobs, and how much it may spend.
+# Change `provider` to switch models; nothing else needs to change.
+
+provider: anthropic          # anthropic | zai | qwen | mock (mock = free fake AI for testing)
+
+providers:
+  anthropic:
+    model: claude-haiku-5-5
+    key_env: ANTHROPIC_API_KEY
+    price_per_m: {input: 0.10, output: 0.50, cache_read: 0.01, cache_write: 0.125}   # USD, checked 7 Nov 2026
+  zai:                         # for the milestone 3 comparison; verify model name and URL in Z.ai docs
+    model: glm-4.7-flash
+    key_env: ZAI_API_KEY
+    base_url: https://api.z.ai/api/paas/v4/
+    price_per_m: {input: 0.0, output: 0.0}
+  qwen:                        # for the milestone 3 comparison; Singapore region
+    model: qwen3.8-flash
+    key_env: DASHSCOPE_API_KEY
+    base_url: https://dashscope-intl.aliyuncs.com/compatible-mode/v1
+    price_per_m: {input: 0.15, output: 0.47}
+  mock:
+    model: mock
+    price_per_m: {input: 0.0, output: 0.0}
+
+budget:
+  daily_usd: 0.60            # hard stop for the day (~RM2.45); posts wait until tomorrow
+  max_output_tokens: 900
+
+links:
+  read_linked_pages: true
+  only_if_post_shorter_than: 1200   # long posts already contain the details
+  max_page_chars: 6000
+  skip_domains: [linkedin.com, t.me, telegram.me, x.com, twitter.com, facebook.com, instagram.com]

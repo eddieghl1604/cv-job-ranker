@@ -5,6 +5,14 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
+# Use Windows' own certificate store for HTTPS (fixes the "self signed certificate"
+# error on networks that inspect traffic, the same problem pip had).
+try:
+    import truststore
+    truststore.inject_into_ssl()
+except ImportError:
+    pass
+
 ROOT = Path(__file__).resolve().parent.parent
 load_dotenv(ROOT / ".env")
 

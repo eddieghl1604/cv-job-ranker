@@ -243,3 +243,12 @@ config/available_chats.csv
 
 config/channel_check.csv
 config/suggested_sources.txt
+
+data/screened.csv
+config/profile.yaml
+
+config/google-service-account.json
+data/bot_state.json
+data/*.json
+data/agent.log*
+config/learned.yaml

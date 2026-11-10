@@ -1,0 +1,70 @@
+# Which AI model screens your jobs, and how much it may spend.
+# Change `provider` to switch models; nothing else needs to change.
+
+provider: anthropic          # anthropic | zai | groq | groq-small | mock (mock = free fake AI for testing)
+
+providers:
+  anthropic:
+    model: claude-haiku-5-5
+    key_env: ANTHROPIC_API_KEY
+    price_per_m: {input: 0.10, output: 0.50, cache_read: 0.01, cache_write: 0.125}   # USD, checked 7 Nov 2026
+  zai:                         # for the milestone 3 comparison; verify model name and URL in Z.ai docs
+    model: glm-4.7-flash
+    key_env: ZAI_API_KEY
+    base_url: https://api.z.ai/api/paas/v4/
+    price_per_m: {input: 0.0, output: 0.0}
+  groq:                        # milestone 3 challenger; paid Developer plan needed for full daily volume
+    model: openai/gpt-oss-120b
+    key_env: GROQ_API_KEY
+    base_url: https://api.groq.com/openai/v1
+    price_per_m: {input: 0.15, output: 0.60, cache_read: 0.075}   # USD, Groq model page, checked 8 Nov 2026
+    reasoning_effort: low      # low | medium | high: thinking tokens are billed as output, low keeps cost down
+    json_mode: true            # ask the API to return valid JSON only
+  groq-small:                  # milestone 3: cheaper GPT-OSS 20B, same Groq key
+    model: openai/gpt-oss-20b
+    key_env: GROQ_API_KEY
+    base_url: https://api.groq.com/openai/v1
+    price_per_m: {input: 0.075, output: 0.30, cache_read: 0.037}  # USD, Groq model page, checked 8 Nov 2026
+    reasoning_effort: low
+    json_mode: true
+  mock:
+    model: mock
+    price_per_m: {input: 0.0, output: 0.0}
+
+budget:
+  daily_usd: 0.60            # hard stop for the day (~RM2.45); posts wait until tomorrow
+  max_output_tokens: 2500   # room for posts that list several jobs
+
+links:
+  read_linked_pages: true
+  only_if_post_shorter_than: 1200   # long posts already contain the details
+  max_page_chars: 6000
+  skip_domains: [linkedin.com, t.me, telegram.me, x.com, twitter.com, facebook.com, instagram.com]
+
+notify:
+  alert_min_score: 60          # instant Telegram alert for kept jobs at or above this score
+  quiet_hours: "23:00-08:00"   # alerts found at night wait until the morning (Malaysia time)
+  max_alerts_per_run: 5        # avoids a flood after a long break; the rest go in the digest
+  digest_time: "21:00"         # daily digest, Malaysia time
+  digest_top_n: 10
+  near_miss_min_score: 55      # skipped by a rule but scored well: shown in the digest with the reason
+
+agent:
+  poll_minutes: 15             # how often to check channels for new posts
+  screen_per_cycle: 60         # max posts sent to the AI per check (daily cap still applies)
+  screen_max_age_days: 3       # older unscreened posts are ignored (stale jobs aren't worth paying for)
+  keep_awake: plugged_in       # plugged_in | always | never  (Windows: stops sleep while the agent runs)
+
+sheet:
+  worksheet: Jobs
+  min_score: 30                # kept jobs below this stay out of the sheet (still in the database/export)
+                               # near misses (skipped but >= notify.near_miss_min_score) are always added
+
+learning:
+  review_day: Sun              # weekly review of your ratings (Mon Tue Wed Thu Fri Sat Sun)
+  review_time: "20:00"         # Malaysia time; runs only if you gave 5+ new ratings since the last one
+  min_new_ratings: 5
+  min_ratings: 15              # no reviews before this many ratings
+  spot_checks: true            # occasional rating cards: every 12 h -> 24 h -> 72 h as accuracy rises
+  retest_every_likes: 15       # re-run the model test at 15, 30, 45 ... 👍
+  retest_providers: [anthropic, groq-small]
